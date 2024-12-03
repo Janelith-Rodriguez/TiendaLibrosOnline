@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.OleDb;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace CapaDatos.Datos
 {
@@ -32,7 +32,7 @@ namespace CapaDatos.Datos
                 orden = $"delete from Usuario where ID_Usuario={objUsuario.IdUsuario};";
             }
 
-            OleDbCommand cmd = new OleDbCommand(orden, (OleDbConnection)conexion);
+            SqlCommand cmd = new SqlCommand(orden,conexion);
             try
             {
                 Abrirconexion();
@@ -59,14 +59,13 @@ namespace CapaDatos.Datos
             else
                 orden = "select * from Usuario;";
 
-            OleDbCommand cmd = new OleDbCommand(orden, (OleDbConnection)conexion);
+            SqlCommand cmd = new SqlCommand(orden,conexion);
             DataSet ds = new DataSet();
-            OleDbDataAdapter da = new OleDbDataAdapter();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
 
             try
             {
                 Abrirconexion();
-                da.SelectCommand = cmd;
                 da.Fill(ds);
             }
             catch (Exception e)

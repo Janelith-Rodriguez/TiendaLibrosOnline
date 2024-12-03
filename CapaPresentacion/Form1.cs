@@ -21,65 +21,66 @@ namespace CapaPresentacion
         public Form1()
         {
             InitializeComponent();
-            CrearDGVUsuarios();
-            CrearDGVLibros();
-            LlenarDGVUsuarios();
-            LlenarDGVLibros();
+           // CrearDGVUsuarios();
+           // CrearDGVLibros();
+            //LlenarDGVUsuarios();
+            //LlenarDGVLibros();
         }
         private void CargarDatos()
         {
             // Cargar datos iniciales en los DataGridView
-            dgvUsuarios.DataSource = negUsuarios.ObtenerUsuarios();
-            dgvLibros.DataSource = negLibros.ObtenerLibros();
+            CrearDGVUsuarios.DataSource = objNegUsuarios.ObtenerUsuarios();
+            CrearDGVLibros.DataSource = objNegLibros.ObtenerLibros();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            LlenarDGVUsuarios();
+            LlenarDGVLibros();
         }
 
         
 
         private void CrearDGVUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            dgvUsuarios.Columns.Add("0", "ID");
-            dgvUsuarios.Columns.Add("1", "Nombre");
-            dgvUsuarios.Columns.Add("2", "Correo Electrónico");
-            dgvUsuarios.Columns.Add("3", "Dirección de Envío");
+            CrearDGVUsuarios.Columns.Add("0", "ID");
+            CrearDGVUsuarios.Columns.Add("1", "Nombre");
+            CrearDGVUsuarios.Columns.Add("2", "Correo Electrónico");
+            CrearDGVUsuarios.Columns.Add("3", "Dirección de Envío");
 
-            dgvUsuarios.Columns[0].Width = 50;
-            dgvUsuarios.Columns[1].Width = 150;
-            dgvUsuarios.Columns[2].Width = 200;
-            dgvUsuarios.Columns[3].Width = 250;
+            CrearDGVUsuarios.Columns[0].Width = 50;
+            CrearDGVUsuarios.Columns[1].Width = 150;
+            CrearDGVUsuarios.Columns[2].Width = 200;
+            CrearDGVUsuarios.Columns[3].Width = 250;
         }
 
         private void CrearDGVLibros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            dgvLibros.Columns.Add("0", "ID");
-            dgvLibros.Columns.Add("1", "Título");
-            dgvLibros.Columns.Add("2", "Autor");
-            dgvLibros.Columns.Add("3", "Género");
-            dgvLibros.Columns.Add("4", "Precio");
-            dgvLibros.Columns.Add("5", "Cantidad en Stock");
+            CrearDGVLibros.Columns.Add("0", "ID");
+            CrearDGVLibros.Columns.Add("1", "Título");
+            CrearDGVLibros.Columns.Add("2", "Autor");
+            CrearDGVLibros.Columns.Add("3", "Género");
+            CrearDGVLibros.Columns.Add("4", "Precio");
+            CrearDGVLibros.Columns.Add("5", "Cantidad en Stock");
 
-            dgvLibros.Columns[0].Width = 50;
-            dgvLibros.Columns[1].Width = 150;
-            dgvLibros.Columns[2].Width = 150;
-            dgvLibros.Columns[3].Width = 100;
-            dgvLibros.Columns[4].Width = 80;
-            dgvLibros.Columns[5].Width = 80;
+            CrearDGVLibros.Columns[0].Width = 50;
+            CrearDGVLibros.Columns[1].Width = 150;
+            CrearDGVLibros.Columns[2].Width = 150;
+            CrearDGVLibros.Columns[3].Width = 100;
+            CrearDGVLibros.Columns[4].Width = 80;
+            CrearDGVLibros.Columns[5].Width = 80;
         }
 
         private void LlenarDGVUsuarios()
         {
-            dgvUsuarios.Rows.Clear();
+            CrearDGVUsuarios.Rows.Clear();
             DataSet ds = objNegUsuarios.listadoUsuarios("Todos");
 
             if (ds.Tables[0].Rows.Count > 0)
             {
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    dgvUsuarios.Rows.Add(dr["ID_Usuario"], dr["Nombre"], dr["Correo_Electronico"], dr["Direccion_Envio"]);
+                    CrearDGVUsuarios.Rows.Add(dr["ID_Usuario"], dr["Nombre"], dr["Correo_Electronico"], dr["Direccion_Envio"]);
                 }
             }
             else
@@ -90,14 +91,14 @@ namespace CapaPresentacion
 
         private void LlenarDGVLibros()
         {
-            dgvLibros.Rows.Clear();
+            CrearDGVLibros.Rows.Clear();
             DataSet ds = objNegLibros.listadoLibros("Todos");
 
             if (ds.Tables[0].Rows.Count > 0)
             {
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    dgvLibros.Rows.Add(dr["ID_Libro"], dr["Titulo"], dr["Autor"], dr["Genero"], dr["Precio"], dr["Cantidad_Stock"]);
+                    CrearDGVLibros.Rows.Add(dr["ID_Libro"], dr["Titulo"], dr["Autor"], dr["Genero"], dr["Precio"], dr["Cantidad_Stock"]);
                 }
             }
             else
@@ -145,7 +146,7 @@ namespace CapaPresentacion
 
         private void btnAgregarCarrito_Click(object sender, EventArgs e)
         {
-            if (!ValidarCampos(txtIdUsuario, txtIdLibro, txtCantidad))
+            if (ValidarCampos(txtIdUsuario, txtIdLibro, txtCantidad))
             {
                 Carrito nuevoCarrito = new Carrito
                 {
@@ -154,9 +155,21 @@ namespace CapaPresentacion
                     Cantidad = int.Parse(txtCantidad.Text)
                 };
 
-                objNegCarritos.abmCarritos("Alta", nuevoCarrito);
-                MessageBox.Show("Carrito agregado correctamente.");
-                LimpiarCampos(txtIdUsuario, txtIdLibro, txtCantidad);
+                int resultado = objNegCarritos.abmCarritos("Alta", nuevoCarrito);
+
+                if (resultado > 0)
+                {
+                    MessageBox.Show("Carrito agregado correctamente.");
+                    LimpiarCampos(txtIdUsuario, txtIdLibro, txtCantidad);
+                }
+                else
+                {
+                    MessageBox.Show("Error al agregar el carrito.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, complete todos los campos.");
             }
         }
         private bool ValidarCampos(params TextBox[] campos)
@@ -179,7 +192,5 @@ namespace CapaPresentacion
                 campo.Text = string.Empty;
             }
         }
-
-
     }
 }

@@ -1,22 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
-using System.Data.OleDb;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Runtime.Remoting.Contexts;
 
 namespace CapaDatos.Datos
 {
     public class DatosConexion
     {
-        protected DbConnection conexion;
-        protected string cadenaConexion = @"(localdb)\MSSQLLocalDB;Data Source=C:TiendaLibrosOnline.db";
+        public SqlConnection conexion;
+        //protected DbConnection conexion;
+
+        protected string cadenaConexion = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Usuario\TiendaLibrosOnline.mdf;Integrated Security = True; Connect Timeout = 30";
+        //protected string cadenaConexion = @"Server=(localdb)\MSSQLLocalDB;Database=TiendaLibrosOnline.Integrated Security=True";
+        //protected string cadenaConexion = @"Data Source=(localdb)\MSSQLLocalDB;Database=TiendaLibrosOnline.Integrated Security=True;Connet Timeout=30;Encrypt=False";
 
         public DatosConexion()
         {
-            conexion = new OleDbConnection(cadenaConexion);
+            conexion = new SqlConnection(cadenaConexion);
         }
         public void Abrirconexion()
         {

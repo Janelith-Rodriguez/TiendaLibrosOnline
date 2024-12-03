@@ -10,38 +10,36 @@ namespace CapaNegocio.Negocio
 {
     public class NegCarritos
     {
-        AdministrarLibros datosObjLibros = new AdministrarLibros();
+        AdministrarCarritos datosObjCarritos = new AdministrarCarritos();
 
-        public int abmLibros(string accion, Libro objLibro)
+        public int abmCarritos(string accion, Carrito objCarrito)
         {
-            return datosObjLibros.abmLibros(accion, objLibro);
+            return datosObjCarritos.abmCarritos(accion, objCarrito);
         }
 
-        public DataSet listadoLibros(string cual)
+        public DataSet listadoCarritos(string cual)
         {
-            return datosObjLibros.listadoLibros(cual);
+            return datosObjCarritos.listadoCarritos(cual);
         }
 
-        public List<Libro> ObtenerLibros()
+        public List<Carrito> ObtenerCarritos()
         {
             // Si es necesario, puedes implementar lógica adicional aquí.
-            DataSet ds = datosObjLibros.listadoLibros("Todos");
-            List<Libro> libros = new List<Libro>();
+            DataSet ds = datosObjCarritos.listadoCarritos("Todos");
+            List<Carrito> carritos = new List<Carrito>();
 
             foreach (DataRow row in ds.Tables[0].Rows)
             {
-                libros.Add(new Libro
+                carritos.Add(new Carrito
                 {
+                    IdCarrito = (int)row["ID_Carrito"],
+                    IdUsuario = (int)row["ID_Usuario"],
                     IdLibro = (int)row["ID_Libro"],
-                    Titulo = row["Titulo"].ToString(),
-                    Autor = row["Autor"].ToString(),
-                    Genero = row["Genero"].ToString(),
-                    Precio = (decimal)row["Precio"],
-                    CantidadStock = (int)row["Cantidad_Stock"]
+                    Cantidad = (int)row["Cantidad"]
                 });
             }
 
-            return libros;
+            return carritos;
         }
     }
 }

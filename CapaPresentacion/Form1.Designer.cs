@@ -33,9 +33,9 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAgregarCarrito = new System.Windows.Forms.Button();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.txtIdLibro = new System.Windows.Forms.TextBox();
+            this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -49,11 +49,11 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtCantidadStock = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtGenero = new System.Windows.Forms.TextBox();
+            this.txtAutor = new System.Windows.Forms.TextBox();
+            this.txtTitulo = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -62,10 +62,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnAgregarUsuario = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtDireccionEnvio = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCorreoElectronico = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.CrearDGVUsuarios)).BeginInit();
@@ -83,7 +83,6 @@
             this.CrearDGVUsuarios.Name = "CrearDGVUsuarios";
             this.CrearDGVUsuarios.Size = new System.Drawing.Size(319, 107);
             this.CrearDGVUsuarios.TabIndex = 62;
-            this.CrearDGVUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Nombre
             // 
@@ -110,26 +109,26 @@
             this.btnAgregarCarrito.UseVisualStyleBackColor = true;
             this.btnAgregarCarrito.Click += new System.EventHandler(this.btnAgregarCarrito_Click);
             // 
-            // textBox13
+            // txtCantidad
             // 
-            this.textBox13.Location = new System.Drawing.Point(1064, 354);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(94, 20);
-            this.textBox13.TabIndex = 60;
+            this.txtCantidad.Location = new System.Drawing.Point(1064, 354);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(94, 20);
+            this.txtCantidad.TabIndex = 60;
             // 
-            // textBox12
+            // txtIdLibro
             // 
-            this.textBox12.Location = new System.Drawing.Point(1064, 303);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(94, 20);
-            this.textBox12.TabIndex = 59;
+            this.txtIdLibro.Location = new System.Drawing.Point(1064, 303);
+            this.txtIdLibro.Name = "txtIdLibro";
+            this.txtIdLibro.Size = new System.Drawing.Size(94, 20);
+            this.txtIdLibro.TabIndex = 59;
             // 
-            // textBox11
+            // txtIdUsuario
             // 
-            this.textBox11.Location = new System.Drawing.Point(1064, 246);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(94, 20);
-            this.textBox11.TabIndex = 58;
+            this.txtIdUsuario.Location = new System.Drawing.Point(1064, 246);
+            this.txtIdUsuario.Name = "txtIdUsuario";
+            this.txtIdUsuario.Size = new System.Drawing.Size(94, 20);
+            this.txtIdUsuario.TabIndex = 58;
             // 
             // label13
             // 
@@ -228,40 +227,40 @@
             this.textBox9.Size = new System.Drawing.Size(177, 20);
             this.textBox9.TabIndex = 51;
             // 
-            // textBox8
+            // txtCantidadStock
             // 
-            this.textBox8.Location = new System.Drawing.Point(201, 367);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(177, 20);
-            this.textBox8.TabIndex = 50;
+            this.txtCantidadStock.Location = new System.Drawing.Point(201, 367);
+            this.txtCantidadStock.Name = "txtCantidadStock";
+            this.txtCantidadStock.Size = new System.Drawing.Size(177, 20);
+            this.txtCantidadStock.TabIndex = 50;
             // 
-            // textBox7
+            // txtPrecio
             // 
-            this.textBox7.Location = new System.Drawing.Point(201, 332);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(177, 20);
-            this.textBox7.TabIndex = 49;
+            this.txtPrecio.Location = new System.Drawing.Point(201, 332);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(177, 20);
+            this.txtPrecio.TabIndex = 49;
             // 
-            // textBox6
+            // txtGenero
             // 
-            this.textBox6.Location = new System.Drawing.Point(201, 291);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(177, 20);
-            this.textBox6.TabIndex = 48;
+            this.txtGenero.Location = new System.Drawing.Point(201, 291);
+            this.txtGenero.Name = "txtGenero";
+            this.txtGenero.Size = new System.Drawing.Size(177, 20);
+            this.txtGenero.TabIndex = 48;
             // 
-            // textBox5
+            // txtAutor
             // 
-            this.textBox5.Location = new System.Drawing.Point(201, 255);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(177, 20);
-            this.textBox5.TabIndex = 47;
+            this.txtAutor.Location = new System.Drawing.Point(201, 255);
+            this.txtAutor.Name = "txtAutor";
+            this.txtAutor.Size = new System.Drawing.Size(177, 20);
+            this.txtAutor.TabIndex = 47;
             // 
-            // textBox4
+            // txtTitulo
             // 
-            this.textBox4.Location = new System.Drawing.Point(201, 211);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(177, 20);
-            this.textBox4.TabIndex = 46;
+            this.txtTitulo.Location = new System.Drawing.Point(201, 211);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(177, 20);
+            this.txtTitulo.TabIndex = 46;
             // 
             // label10
             // 
@@ -336,12 +335,12 @@
             this.btnAgregarUsuario.UseVisualStyleBackColor = true;
             this.btnAgregarUsuario.Click += new System.EventHandler(this.btnAgregarUsuario_Click);
             // 
-            // textBox3
+            // txtDireccionEnvio
             // 
-            this.textBox3.Location = new System.Drawing.Point(201, 106);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(177, 20);
-            this.textBox3.TabIndex = 37;
+            this.txtDireccionEnvio.Location = new System.Drawing.Point(201, 106);
+            this.txtDireccionEnvio.Name = "txtDireccionEnvio";
+            this.txtDireccionEnvio.Size = new System.Drawing.Size(177, 20);
+            this.txtDireccionEnvio.TabIndex = 37;
             // 
             // label3
             // 
@@ -352,19 +351,19 @@
             this.label3.TabIndex = 36;
             this.label3.Text = "Direccion de Envio:";
             // 
-            // textBox2
+            // txtCorreoElectronico
             // 
-            this.textBox2.Location = new System.Drawing.Point(201, 61);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(177, 20);
-            this.textBox2.TabIndex = 35;
+            this.txtCorreoElectronico.Location = new System.Drawing.Point(201, 61);
+            this.txtCorreoElectronico.Name = "txtCorreoElectronico";
+            this.txtCorreoElectronico.Size = new System.Drawing.Size(177, 20);
+            this.txtCorreoElectronico.TabIndex = 35;
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(201, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 20);
-            this.textBox1.TabIndex = 34;
+            this.txtNombre.Location = new System.Drawing.Point(201, 19);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(177, 20);
+            this.txtNombre.TabIndex = 34;
             // 
             // label2
             // 
@@ -391,9 +390,9 @@
             this.ClientSize = new System.Drawing.Size(1180, 517);
             this.Controls.Add(this.CrearDGVUsuarios);
             this.Controls.Add(this.btnAgregarCarrito);
-            this.Controls.Add(this.textBox13);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.txtCantidad);
+            this.Controls.Add(this.txtIdLibro);
+            this.Controls.Add(this.txtIdUsuario);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -401,11 +400,11 @@
             this.Controls.Add(this.CrearDGVLibros);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtCantidadStock);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.txtGenero);
+            this.Controls.Add(this.txtAutor);
+            this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -414,10 +413,10 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnAgregarUsuario);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtDireccionEnvio);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCorreoElectronico);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
@@ -437,9 +436,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Button btnAgregarCarrito;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.TextBox txtIdLibro;
+        private System.Windows.Forms.TextBox txtIdUsuario;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
@@ -453,11 +452,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtCantidadStock;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtGenero;
+        private System.Windows.Forms.TextBox txtAutor;
+        private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -466,10 +465,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnAgregarUsuario;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtDireccionEnvio;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCorreoElectronico;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }
